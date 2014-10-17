@@ -1,7 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @western_item = FoodItem.where(cuisine: "Western").sample
-    @asian_item = FoodItem.where(cuisine: "Asian").sample
-    @adventurous_item = FoodItem.where(cuisine: "Adventurous").sample
+    @items = ['Western', 'Asian', 'Adventurous'].map{|i| FoodItem.where(cuisine: i).sample}
   end
 end

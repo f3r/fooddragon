@@ -1,20 +1,21 @@
 <div class="container">
-    <h1>FoodDragon</h1>
-    <p>ROOOOAAAAARRRRRRRR</p>
+  <h1>FoodDragon</h1>
+  <p>ROOOOAAAAARRRRRRRR</p>
 
-    <h2>We have lots of delicious options.</h2>
+  <h2>We have lots of delicious options.</h2>
 
-    <div class="row">
-        <% [@western_item, @asian_item, @adventurous_item].each do |item| %>
-            <div class="col-md-4">
-                <strong>
-                    Try this <span class="cuisine-name"><%= item.cuisine %></span> item:
-                    <span class="item-name"><%= item.name %></span>
-                </strong>
-                <p>It comes from <strong><%= item.restaurant_name %></strong> at the smokin' hot price of <%= item.price %>
-                <p>Harry gives it a <%= item.harrys_choice ? "THUMBS UP" : "THUMBS DOWN" %>
-                <p><%= image_tag item.photo_path %>
-            </div>
-        <% end %>
-    </div>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-md-4">
+        <strong>
+          Try this <span class="cuisine-name"><%= item.cuisine %></span> item:
+          <span class="item-name"><%= item.name %></span>
+        </strong>
+
+        <p>It comes from <strong><%= item.restaurant_name %></strong> at the smokin' hot price of <%= item.price %>
+        <p>Harry gives it a <%= item.harrys_choice ? "THUMBS UP" : "THUMBS DOWN" %>
+        <p><%= image_tag item.photo_path %>
+      </div>
+    <% end %>
+  </div>
 </div>
